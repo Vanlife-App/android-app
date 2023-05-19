@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
             AndroidAppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    color = MaterialTheme.colors.surface
                 ) {
                     NavigationGraph()
                 }

@@ -84,8 +84,7 @@ fun SignInScreen(
     ) {
         Text(
             text = "Sign in",
-            style = MaterialTheme.typography.h1,
-            color = MaterialTheme.colors.onBackground,
+            style = MaterialTheme.typography.h1
         )
     }
 
@@ -143,15 +142,14 @@ fun SignInScreen(
                 }
             },
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = MaterialTheme.colors.primary,
-                contentColor = MaterialTheme.colors.onBackground
+                backgroundColor = MaterialTheme.colors.primary
             ),
             shape = RoundedCornerShape(8.dp)
         ) {
             Text(
                 modifier = Modifier.padding(MaterialTheme.spacing.small),
                 text = "Sign in",
-                style = MaterialTheme.typography.h3
+                style = MaterialTheme.typography.h2
             )
         }
 
@@ -163,8 +161,7 @@ fun SignInScreen(
         ) {
             Text(
                 text = "Don't have an account? ",
-                style = MaterialTheme.typography.subtitle1,
-                color = MaterialTheme.colors.secondaryVariant
+                style = MaterialTheme.typography.subtitle1
             )
             Text(
                 modifier = Modifier.clickable { navController.navigate(Screens.SignUpScreen.route) },
@@ -178,8 +175,7 @@ fun SignInScreen(
 
         Text(
             text = "or connect with",
-            style = MaterialTheme.typography.subtitle2,
-            color = MaterialTheme.colors.secondaryVariant
+            style = MaterialTheme.typography.subtitle2
         )
 
         Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
@@ -205,8 +201,7 @@ fun SignInScreen(
             LaunchedEffect(state.value?.success) {
                 coroutine.launch {
                     if (state.value?.success?.isNotEmpty() == true) {
-                        val success = state.value?.success
-                        Toast.makeText(context, success, Toast.LENGTH_LONG).show()
+                        navController.navigate(Screens.HomeScreen.route)
                     }
                 }
             }
@@ -223,7 +218,7 @@ fun SignInScreen(
             LaunchedEffect(googleSignInState.success) {
                 coroutine.launch {
                     if (googleSignInState.success != null) {
-                        Toast.makeText(context, "Sign in successful", Toast.LENGTH_LONG).show()
+                        navController.navigate(Screens.HomeScreen.route)
                     }
                 }
             }

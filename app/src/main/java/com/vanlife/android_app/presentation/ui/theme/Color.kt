@@ -12,10 +12,12 @@ val LightColors = lightColors(
     secondary = Color(4293719286),
     secondaryVariant = faded,
     background = Color(4294900479),
+    surface = Color(4294900479),
     error = Color.Red,
     onPrimary = Color.White,
     onSecondary = Color(4281019179),
-    onBackground = Color(4287532690),
+    onBackground = Color.Black,
+    onSurface = Color.Black,
     onError = Color.White
 )
 
@@ -24,9 +26,11 @@ val DarkColors = darkColors(
     secondary = Color(4281350972),
     secondaryVariant = faded,
     background = Color(4279440151),
+    surface = Color(4279440151),
     error = Color.Red,
     onPrimary = Color.White,
     onSecondary = Color(4293322470),
     onBackground = Color(4294901502),
+    onSurface = Color(4294901502),
     onError = Color.White
 )

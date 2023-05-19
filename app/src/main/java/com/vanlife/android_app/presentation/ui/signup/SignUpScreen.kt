@@ -62,8 +62,7 @@ fun SignUpScreen(
     ) {
         Text(
             text = "Sign up",
-            style = MaterialTheme.typography.h1,
-            color = MaterialTheme.colors.onBackground,
+            style = MaterialTheme.typography.h1
         )
     }
 
@@ -128,15 +127,14 @@ fun SignUpScreen(
                 }
             },
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = MaterialTheme.colors.primary,
-                contentColor = MaterialTheme.colors.onBackground
+                backgroundColor = MaterialTheme.colors.primary
             ),
             shape = RoundedCornerShape(8.dp)
         ) {
             Text(
                 modifier = Modifier.padding(MaterialTheme.spacing.small),
                 text = "Sign up",
-                style = MaterialTheme.typography.h3
+                style = MaterialTheme.typography.h2
             )
         }
 
@@ -148,8 +146,7 @@ fun SignUpScreen(
         ) {
             Text(
                 text = "Already have an account? ",
-                style = MaterialTheme.typography.subtitle1,
-                color = MaterialTheme.colors.secondaryVariant
+                style = MaterialTheme.typography.subtitle1
             )
             Text(
                 modifier = Modifier.clickable { navController.navigate(Screens.SignInScreen.route) },
@@ -162,8 +159,7 @@ fun SignUpScreen(
         LaunchedEffect(state.value?.isSuccess) {
             coroutine.launch {
                 if (state.value?.isSuccess?.isNotEmpty() == true) {
-                    val success = state.value?.isSuccess
-                    Toast.makeText(context, success, Toast.LENGTH_LONG).show()
+                    navController.navigate(Screens.HomeScreen.route)
                 }
             }
         }
